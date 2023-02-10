@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
+
+h1 {
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 64px;
+    font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    padding-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav a:hover { color: white !important; }
+
+.navbar {
+    background-color: #2A2A72;
+    height: 60px;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-right: 10px;
+}
+
+.hero-cont {
+    height: 186px;
+    background-color: #009FFD;
+    margin-bottom: 70px;
+}
+
+.btn-cont {
+    max-width: 635px;
+}
+
+.pages-cont {
+    max-width: 941px;
+}
+
+.btn-main {
+    width: 100%;
+    /* height: 58px; */
+    border-radius: 50px;
+    background-color: #2A2A72;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+}
+
+.btn-submit {
+    width: 200px;
+    /* height: 58px; */
+    border-radius: 50px;
+    background-color: #2A2A72;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 35px;
+}
+
+.gx-35 {
+    --bs-gutter-x: 35px;
+}
+
+.output {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.mad-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.inp-fld {
+    height: 47px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.mad-inp-fld {
+    height: 47px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.sec-row {
+    padding-top: 60px;
+}
+
+.text-righty {
+    text-align: right;
+}
+
+.dir-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
 }
