@@ -1,7 +1,9 @@
 async function GetHello(name) {
-    const response = await fetch(`https://allinoneendpoints.azurewebsites.net/minichallenge/sayhello/${name}`);
-    const data = await response.text();
-    console.log(data);
+    let data = 'Please enter your name';
+    if (name) {
+        const response = await fetch(`https://allinoneendpoints.azurewebsites.net/minichallenge/sayhello/${name}`);
+        data = await response.text();
+    }
     return data;
 }
 
@@ -41,4 +43,13 @@ async function GetOddOrEven(num) {
     return data;
 }
 
-export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven };
+async function GetReverseIt(words) {
+    let data = "Please enter some text";
+    if (words) {
+        const response = await fetch(`https://allinoneendpoints.azurewebsites.net/minichallenge/reverseit/${words}`)
+        data = response.text();
+    }
+    return data;
+}
+
+export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven, GetReverseIt };

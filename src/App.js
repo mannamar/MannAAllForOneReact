@@ -9,6 +9,7 @@ import AddTwo from './componenets/AddTwo';
 import AskQuestions from './componenets/AskQuestions';
 import GreaterThan from './componenets/GreaterThan';
 import OddOrEven from './componenets/OddOrEven';
+import ReverseIt from './componenets/ReverseIt';
 
 function NavBar() {
   return(
@@ -32,6 +33,7 @@ function App() {
         <Route path='AskQuestions' element={<AskQuestions/>}/>
         <Route path='GreaterThan' element={<GreaterThan/>}/>
         <Route path='OddOrEven' element={<OddOrEven/>}/>
+        <Route path='ReverseIt' element={<ReverseIt/>}/>
       </Routes>
     </BrowserRouter>
   );

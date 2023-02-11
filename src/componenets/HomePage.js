@@ -40,7 +40,7 @@ export default function HomePage() {
 
             <Row>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Reverse It</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="ReverseIt">Reverse It</Button>
                 </Col>
                 <Col xs={6}>
                 <Button className="btn btn-dark btn-main">Student Directory</Button>
