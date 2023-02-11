@@ -8,6 +8,7 @@ import SayHello from './componenets/SayHello'
 import AddTwo from './componenets/AddTwo';
 import AskQuestions from './componenets/AskQuestions';
 import GreaterThan from './componenets/GreaterThan';
+import OddOrEven from './componenets/OddOrEven';
 
 function NavBar() {
   return(
@@ -30,6 +31,7 @@ function App() {
         <Route path='AddTwo' element={<AddTwo/>}/>
         <Route path='AskQuestions' element={<AskQuestions/>}/>
         <Route path='GreaterThan' element={<GreaterThan/>}/>
+        <Route path='OddOrEven' element={<OddOrEven/>}/>
       </Routes>
     </BrowserRouter>
   );

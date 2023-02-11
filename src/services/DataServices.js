@@ -32,4 +32,13 @@ async function GetGreaterThan(num1, num2) {
     return data;
 }
 
-export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan };
+async function GetOddOrEven(num) {
+    let data = "Please enter a valid number";
+    if (num) {
+        const response = await fetch(`https://allinoneendpoints.azurewebsites.net/minichallenge/oddoreven/${num}`)
+        data = response.text();
+    }
+    return data;
+}
+
+export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven };

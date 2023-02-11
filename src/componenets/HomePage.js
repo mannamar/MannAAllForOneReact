@@ -34,7 +34,7 @@ export default function HomePage() {
                 <Button className="btn btn-dark btn-main">Mad Lib</Button>
                 </Col>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Odd or Even</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="OddOrEven">Odd or Even</Button>
                 </Col>
             </Row>
 
