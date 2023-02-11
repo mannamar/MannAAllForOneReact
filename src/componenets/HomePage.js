@@ -22,10 +22,10 @@ export default function HomePage() {
 
             <Row>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Asking Questions</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="AskQuestions">Asking Questions</Button>
                 </Col>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Greater or Less Than</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="GreaterThan">Greater or Less Than</Button>
                 </Col>
             </Row>
 

@@ -6,6 +6,8 @@ import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import HomePage from './componenets/HomePage';
 import SayHello from './componenets/SayHello'
 import AddTwo from './componenets/AddTwo';
+import AskQuestions from './componenets/AskQuestions';
+import GreaterThan from './componenets/GreaterThan';
 
 function NavBar() {
   return(
@@ -26,6 +28,8 @@ function App() {
         <Route path='/' element={<HomePage/>}/>
         <Route path='SayHello' element={<SayHello/>}/>
         <Route path='AddTwo' element={<AddTwo/>}/>
+        <Route path='AskQuestions' element={<AskQuestions/>}/>
+        <Route path='GreaterThan' element={<GreaterThan/>}/>
       </Routes>
     </BrowserRouter>
   );
