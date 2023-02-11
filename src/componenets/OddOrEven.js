@@ -5,11 +5,11 @@ import { GetOddOrEven } from '../services/DataServices';
 
 export default function OddOrEven() {
     const [num, setNum] = useState('');
-    const [response, setResponse] = useState('Good day to you Amar!');
+    const [response, setResponse] = useState('10 is an even number');
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
-                <h1>Say Hello</h1>
+                <h1>Odd or Even</h1>
             </Container>
 
             <Container fluid className="pages-cont">

@@ -8,11 +8,8 @@ export default function SayHello() {
     const [response, setResponse] = useState('Good day to you Amar!');
     const handleKeyDown = async (event) => {
         if (event.key === 'Enter') {
-            console.log('Enter');
             setResponse( await GetHello(name) );
             setName('');
-        } else {
-
         }
     }
     return (

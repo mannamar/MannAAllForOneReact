@@ -10,7 +10,7 @@ export default function GreaterThan() {
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
-                <h1>Say Hello</h1>
+                <h1>Greater or Less Than</h1>
             </Container>
 
             <Container fluid className="pages-cont">
