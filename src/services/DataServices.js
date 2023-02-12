@@ -52,4 +52,19 @@ async function GetReverseIt(words) {
     return data;
 }
 
-export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven, GetReverseIt };
+async function GetRestaurantPicker(type) {
+    const response = await fetch(`https://allinoneendpoints.azurewebsites.net/minichallenge/restaurantpicker/${type}`);
+    const data = response.text();
+    return data;
+}
+
+async function GetMadLib(input1, input2, input3, input4, input5, input6, input7, input8, input9, input10) {
+    let data = 'Please fill out all text fields';
+    if (input1 && input2 && input3 && input4 && input5 && input6 && input7 && input8 && input9 && input10) {
+        const response = await fetch(`https://allinoneendpoints.azurewebsites.net/minichallenge/madlib/${input1}/${input2}/${input3}/${input4}/${input5}/${input6}/${input7}/${input8}/${input9}/${input10}`);
+        data = response.text();
+    }
+    return data;
+}
+
+export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven, GetReverseIt, GetRestaurantPicker, GetMadLib };

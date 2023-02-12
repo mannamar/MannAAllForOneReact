@@ -31,7 +31,7 @@ export default function HomePage() {
 
             <Row>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Mad Lib</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="MadLib">Mad Lib</Button>
                 </Col>
                 <Col xs={6}>
                 <Button className="btn btn-dark btn-main" as={Link} to="OddOrEven">Odd or Even</Button>
@@ -43,14 +43,14 @@ export default function HomePage() {
                 <Button className="btn btn-dark btn-main" as={Link} to="ReverseIt">Reverse It</Button>
                 </Col>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Student Directory</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="Directory">Student Directory</Button>
                 </Col>
             </Row>
 
             <Row>
                 <Col xs={3}></Col>
                 <Col xs={6}>
-                <Button className="btn btn-dark btn-main">Student Directory</Button>
+                <Button className="btn btn-dark btn-main" as={Link} to="RestaurantPicker">Restaurant Picker</Button>
                 </Col>
                 <Col xs={3}></Col>
             </Row>

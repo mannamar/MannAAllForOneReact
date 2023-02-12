@@ -11,8 +11,6 @@ export default function AskQuestions() {
     const handleKeyDown = async (e) => {
         if (e.key === 'Enter') {
             setResponse ( await GetAskQuestions(name, time) );
-            setName('');
-            setTime('');
         }
     }
     return (
@@ -35,8 +33,6 @@ export default function AskQuestions() {
                         <Row className="justify-content-center">
                             <Button className="btn btn-dark btn-submit" onClick={ async () => {
                                 setResponse( await GetAskQuestions(name, time) );
-                                setName('');
-                                setTime('');
                                 } }>Submit</Button>
                         </Row>
                     </Col>

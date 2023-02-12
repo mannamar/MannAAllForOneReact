@@ -10,6 +10,8 @@ import AskQuestions from './componenets/AskQuestions';
 import GreaterThan from './componenets/GreaterThan';
 import OddOrEven from './componenets/OddOrEven';
 import ReverseIt from './componenets/ReverseIt';
+import RestaurantPicker from './componenets/RestaurantPicker';
+import MadLib from './componenets/MadLib';
 
 function NavBar() {
   return(
@@ -34,6 +36,8 @@ function App() {
         <Route path='GreaterThan' element={<GreaterThan/>}/>
         <Route path='OddOrEven' element={<OddOrEven/>}/>
         <Route path='ReverseIt' element={<ReverseIt/>}/>
+        <Route path='RestaurantPicker' element={<RestaurantPicker/>}/>
+        <Route path='MadLib' element={<MadLib/>}/>
       </Routes>
     </BrowserRouter>
   );
