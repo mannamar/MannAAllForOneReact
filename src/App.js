@@ -1,3 +1,8 @@
+// Amardeep Mann
+// All For One React Build
+// 2-12-23
+// We recreated our AFO project but this time using React
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Navbar, Container, Nav } from 'react-bootstrap';

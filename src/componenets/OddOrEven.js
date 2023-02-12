@@ -6,6 +6,11 @@ import { GetOddOrEven } from '../services/DataServices';
 export default function OddOrEven() {
     const [num, setNum] = useState('');
     const [response, setResponse] = useState('10 is an even number');
+    const handleKeyDown = async (event) => {
+        if (event.key === 'Enter') {
+            setResponse( await GetOddOrEven(num) );
+        }
+    }
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
@@ -18,7 +23,7 @@ export default function OddOrEven() {
                         <h2>Enter your name:</h2>
                         <input className="form w-100 inp-fld" type="number" placeholder="10" onChange={ (e) => {
                             setNum(e.target.value);
-                        }}/>
+                        }} onKeyDown={handleKeyDown} />
                         <Row className="justify-content-center">
                             <Button className="btn btn-dark btn-submit" onClick={ async () => {
                                 setResponse( await GetOddOrEven(num) );

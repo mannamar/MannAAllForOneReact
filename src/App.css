@@ -22,7 +22,8 @@ h3 {
     padding-bottom: 20px;
 }
 
-nav a:hover { color: white !important; }
+nav a:hover,
+nav a:focus { color: white !important; }
 
 .navbar {
     background-color: #2A2A72;

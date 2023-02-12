@@ -7,6 +7,11 @@ export default function GreaterThan() {
     const [num1, setNum1] = useState('');
     const [num2, setNum2] = useState('');
     const [response, setResponse] = useState('5 is less than 10');
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            setResponse( await GetGreaterThan(num1, num2) );
+        }
+    }
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
@@ -23,12 +28,12 @@ export default function GreaterThan() {
                                 <Col>
                                     <input className="w-100 inp-fld " type="number" placeholder="5" value={num1} onChange={ (e) => {
                                         setNum1(e.target.value);
-                                    }}/>
+                                    }} onKeyDown={handleKeyDown} />
                                 </Col>
                                 <Col>
                                     <input className="w-100 inp-fld " type="number" placeholder="10" value={num2} onChange={ (e) => {
                                         setNum2(e.target.value);
-                                    }} />
+                                    }} onKeyDown={handleKeyDown} />
                                 </Col>
                             </Row>
                             <Button className="btn btn-dark btn-submit" onClick={ async () => {

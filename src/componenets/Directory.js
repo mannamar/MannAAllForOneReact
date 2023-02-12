@@ -48,7 +48,7 @@ export default function Directory() {
 
             <Container fluid className="pages-cont">
                 <Row className="gx-35">
-                    <Col xs={6}>
+                    <Col xs={12} lg={6}>
                         <h2>Select a student:</h2>
                         <select name="students" id="studentList" className="form w-100 inp-fld" type="text" onChange={ async (e) => {
                             setData( await GetDirectory('byfirstname', e.target.value) );
@@ -83,24 +83,50 @@ export default function Directory() {
                             <Button className="btn btn-dark btn-submit" onClick={ handleClick }>Submit</Button>
                         </Row>
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={12} lg={6}>
                         <h2>Output:</h2>
-                        <Row>
-                            <Col xs={5} className="text-righty">
-                                <p className="dir-text">First Name:</p>
-                                <p className="dir-text">Last Name:</p>
-                                <p className="dir-text">Slack Name:</p>
-                                <p className="dir-text">E-Mail:</p>
-                                <p className="dir-text">Hobbies:</p>
-                            </Col>
-                            <Col xs={7} className="text-center">
-                                <p className="dir-text">{firstName}</p>
-                                <p className="dir-text">{lastName}</p>
-                                <p className="dir-text">{slackName}</p>
-                                <p className="dir-text">{email}</p>
-                                <p className="dir-text">{hobbies}</p>
-                            </Col>
-                        </Row>
+                        <div id="output">
+                                <Row>
+                                    <Col xs={5} className="text-righty">
+                                        <p className="dir-text">First Name:</p>
+                                    </Col>
+                                    <Col xs={7} className="text-center">
+                                        <p className="dir-text">{firstName}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={5} className="text-righty">
+                                        <p className="dir-text">Last Name:</p>
+                                    </Col>
+                                    <Col xs={7} className="text-center">
+                                        <p className="dir-text">{lastName}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={5} className="text-righty">
+                                        <p className="dir-text">Slack Name:</p>
+                                    </Col>
+                                    <Col xs={7} className="text-center">
+                                        <p className="dir-text">{slackName}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={5} className="text-righty">
+                                        <p className="dir-text">E-Mail:</p>
+                                    </Col>
+                                    <Col xs={7} className="text-center">
+                                        <p className="dir-text">{email}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={5} className="text-righty">
+                                        <p className="dir-text">Hobbies:</p>
+                                    </Col>
+                                    <Col xs={7} className="text-center">
+                                        <p className="dir-text">{hobbies}</p>
+                                    </Col>
+                                </Row>
+                        </div>
                     </Col>
                 </Row>
             </Container>
