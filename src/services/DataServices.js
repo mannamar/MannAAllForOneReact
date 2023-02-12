@@ -68,7 +68,6 @@ async function GetMadLib(input1, input2, input3, input4, input5, input6, input7,
 }
 
 async function GetDirectory(type, input) {
-
     if (!input) {
         input = 'notapplicable'
     }
@@ -77,4 +76,11 @@ async function GetDirectory(type, input) {
     return data;
 }
 
-export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven, GetReverseIt, GetRestaurantPicker, GetMadLib, GetDirectory };
+async function GetDirectoryNames() {
+    const response = await fetch(`https://allinoneendpoints.azurewebsites.net/studentdirectory/AllStudents`);
+    const data = await response.json();
+    // console.log(data);
+    return data;
+}
+
+export { GetHello, GetAddTwo, GetAskQuestions, GetGreaterThan, GetOddOrEven, GetReverseIt, GetRestaurantPicker, GetMadLib, GetDirectory, GetDirectoryNames };

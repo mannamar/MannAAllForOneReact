@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { GetDirectory } from '../services/DataServices';
+import { GetDirectoryNames } from '../services/DataServices';
 
 
 export default function Directory() {
@@ -13,16 +14,24 @@ export default function Directory() {
     const [slackName, setSlackName] = useState('Amar');
     const [email, setEmail] = useState('amann@codestack.co');
     const [hobbies, setHobbies] = useState('Kicking rocks');
+    const [nameData, setNameData] = useState([]);
     const handleKeyDown = async (e) => {
         if (e.key === 'Enter') {
-            // setResponse ( await GetDirectory(type, input) );
+            setData( await GetDirectory(type, input) );
         }
     }
     const handleClick = async () => {
         setData( await GetDirectory(type, input) );
     }
-    useEffect(()=>{
-        console.log(data);
+    useEffect( () => {
+        async function GetData() {
+            setNameData(await GetDirectoryNames());
+        }
+        GetData();
+    }, [] )
+
+    useEffect( () => {
+        // console.log(data);
         if (data) {
             setFirstName(data.firstName);
             setLastName(data.lastName);
@@ -30,7 +39,7 @@ export default function Directory() {
             setEmail(data.email);
             setHobbies(data.hobbies);
         }
-        },[data]);
+        }, [data] );
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
@@ -41,16 +50,20 @@ export default function Directory() {
                 <Row className="gx-35">
                     <Col xs={6}>
                         <h2>Select a student:</h2>
-                        <select name="students" id="studentList" className="form w-100 inp-fld" type="text" >
-                            <option value="Amar">Amar Mann</option>
-                            <option value="Danny">Danny Tran</option>
-                            <option value="Ken">Ken Martinez</option>
-                            <option value="Scott">Scott Morenzone</option>
+                        <select name="students" id="studentList" className="form w-100 inp-fld" type="text" onChange={ async (e) => {
+                            setData( await GetDirectory('byfirstname', e.target.value) );
+                        }}>
+                            {nameData.map((person, index) => (
+                                <option key={index} value={person.firstName}>
+                                    {person.firstName} {person.lastName}
+                                </option>
+                                )
+                            )}
                         </select>
                         <Row className='sec-row'>
                             <Col>
                                 <h2>Or search:</h2>
-                                <input name="" id="input" className="form w-100 inp-fld" type="text" placeholder="Amar" onChange={ (e) => {
+                                <input name="" id="input" className="form w-100 inp-fld" type="text" placeholder="Amar" onKeyDown={handleKeyDown} onChange={ (e) => {
                                     setInput(e.target.value);
                                 }}/>
                             </Col>
@@ -58,7 +71,6 @@ export default function Directory() {
                                 <h2>By:</h2>
                                 <select name="foods" id="lookupList" className="form w-100 inp-fld " type="text" onChange={ (e) => {
                                     setType(e.target.value);
-                                    console.log(type);
                                 }}>
                                     <option value="byfirstname">First Name</option>
                                     <option value="bylastname">Last Name</option>
