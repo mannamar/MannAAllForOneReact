@@ -7,7 +7,7 @@ import { GetAskQuestions } from '../services/DataServices';
 export default function AskQuestions() {
     const [name, setName] = useState();
     const [time, setTime] = useState();
-    const [response, setResponse] = useState();
+    const [response, setResponse] = useState('Hello Amar! You woke up at 10am today? Wild');
     const handleKeyDown = async (e) => {
         if (e.key === 'Enter') {
             setResponse ( await GetAskQuestions(name, time) );
@@ -16,7 +16,7 @@ export default function AskQuestions() {
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
-                <h1>Say Hello</h1>
+                <h1>Asking Questions</h1>
             </Container>
 
             <Container fluid className="pages-cont">
