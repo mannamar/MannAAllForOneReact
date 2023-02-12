@@ -12,6 +12,7 @@ import OddOrEven from './componenets/OddOrEven';
 import ReverseIt from './componenets/ReverseIt';
 import RestaurantPicker from './componenets/RestaurantPicker';
 import MadLib from './componenets/MadLib';
+import Directory from './componenets/Directory';
 
 function NavBar() {
   return(
@@ -38,6 +39,7 @@ function App() {
         <Route path='ReverseIt' element={<ReverseIt/>}/>
         <Route path='RestaurantPicker' element={<RestaurantPicker/>}/>
         <Route path='MadLib' element={<MadLib/>}/>
+        <Route path='Directory' element={<Directory/>}/>
       </Routes>
     </BrowserRouter>
   );
