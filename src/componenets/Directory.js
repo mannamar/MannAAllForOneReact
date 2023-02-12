@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GetDirectory } from '../services/DataServices';
 
 
@@ -8,11 +8,29 @@ export default function Directory() {
     const [type, setType] = useState('byfirstname');
     const [input, setInput] = useState('');
     const [data, setData] = useState();
+    const [firstName, setFirstName] = useState('Amardeep');
+    const [lastName, setLastName] = useState('Mann');
+    const [slackName, setSlackName] = useState('Amar');
+    const [email, setEmail] = useState('amann@codestack.co');
+    const [hobbies, setHobbies] = useState('Kicking rocks');
     const handleKeyDown = async (e) => {
         if (e.key === 'Enter') {
             // setResponse ( await GetDirectory(type, input) );
         }
     }
+    const handleClick = async () => {
+        setData( await GetDirectory(type, input) );
+    }
+    useEffect(()=>{
+        console.log(data);
+        if (data) {
+            setFirstName(data.firstName);
+            setLastName(data.lastName);
+            setSlackName(data.slackName);
+            setEmail(data.email);
+            setHobbies(data.hobbies);
+        }
+        },[data]);
     return (
         <>
             <Container fluid className='hero-cont d-flex align-items-center justify-content-center'>
@@ -50,10 +68,7 @@ export default function Directory() {
                             </Col>
                         </Row>
                         <Row className="justify-content-center">
-                            <Button className="btn btn-dark btn-submit" onClick={ async () => {
-                                setData( await GetDirectory(type, input) );
-                                console.log(data);
-                                } }>Submit</Button>
+                            <Button className="btn btn-dark btn-submit" onClick={ handleClick }>Submit</Button>
                         </Row>
                     </Col>
                     <Col xs={6}>
@@ -67,11 +82,11 @@ export default function Directory() {
                                 <p className="dir-text">Hobbies:</p>
                             </Col>
                             <Col xs={7} className="text-center">
-                                <p className="dir-text">Amardeep</p>
-                                <p className="dir-text">Mann</p>
-                                <p className="dir-text">Amar</p>
-                                <p className="dir-text">amann@codestack.co</p>
-                                <p className="dir-text">Kicking rocks</p>
+                                <p className="dir-text">{firstName}</p>
+                                <p className="dir-text">{lastName}</p>
+                                <p className="dir-text">{slackName}</p>
+                                <p className="dir-text">{email}</p>
+                                <p className="dir-text">{hobbies}</p>
                             </Col>
                         </Row>
                     </Col>

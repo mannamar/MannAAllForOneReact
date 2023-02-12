@@ -68,11 +68,12 @@ async function GetMadLib(input1, input2, input3, input4, input5, input6, input7,
 }
 
 async function GetDirectory(type, input) {
-    let data = 'Please enter a valid search';
-    if (input) {
-        const response = await fetch(`https://allinoneendpoints.azurewebsites.net/studentdirectory/${type}/${input}`);
-        data = await response.json();
+
+    if (!input) {
+        input = 'notapplicable'
     }
+    const response = await fetch(`https://allinoneendpoints.azurewebsites.net/studentdirectory/${type}/${input}`);
+    const data = await response.json();
     return data;
 }
 
